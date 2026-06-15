@@ -65,7 +65,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         //属性转换
         Employee employee = new Employee();
         //对象属性拷贝
-        BeanUtils.copyProperties( employeeDTO,employee);
+        BeanUtils.copyProperties(employeeDTO, employee);
         //帐号状态：1正常，0锁定
         employee.setStatus(StatusConstant.ENABLE);
         //密码md5加密
@@ -74,8 +74,8 @@ public class EmployeeServiceImpl implements EmployeeService {
         employee.setCreateTime(LocalDateTime.now());
         employee.setUpdateTime(LocalDateTime.now());
         //TODO设置创始人和修改人id
-        employee.setCreateUser(10L);
-        employee.setUpdateUser(10L);
+        employee.setCreateUser(BaseContext.getCurrentId());
+        employee.setUpdateUser(BaseContext.getCurrentId());
         employeeMapper.insert(employee);
 
 
