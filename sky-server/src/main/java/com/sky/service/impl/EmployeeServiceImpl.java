@@ -81,12 +81,12 @@ public class EmployeeServiceImpl implements EmployeeService {
         //密码md5加密
         employee.setPassword(DigestUtils.md5DigestAsHex(PasswordConstant.DEFAULT_PASSWORD.getBytes()));
         //设置当前记录时间和插入时间
-        employee.setCreateTime(LocalDateTime.now());
-        employee.setUpdateTime(LocalDateTime.now());
-        //TODO设置创始人和修改人id
-        employee.setCreateUser(BaseContext.getCurrentId());
-        employee.setUpdateUser(BaseContext.getCurrentId());
-        employeeMapper.insert(employee);
+       //employee.setCreateTime(LocalDateTime.now());
+       //employee.setUpdateTime(LocalDateTime.now());
+
+       //employee.setCreateUser(BaseContext.getCurrentId());
+       //employee.setUpdateUser(BaseContext.getCurrentId());
+       //employeeMapper.insert(employee);
     }
     /**
      * 分页查询
